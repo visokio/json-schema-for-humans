@@ -12,6 +12,7 @@ from dataclasses_json import dataclass_json
 from json_schema_for_humans.const import (
     DEFAULT_CSS_FILE_NAME,
     DEFAULT_JS_FILE_NAME,
+    JS_LOCAL_ASSET_FILE_NAMES,
     OFFLINE_CSS_FILE_NAMES,
     OFFLINE_FONT_FILE_NAMES,
     OFFLINE_JS_FILE_NAMES,
@@ -99,6 +100,8 @@ class GenerationConfiguration:
                 files_to_copy.append(DEFAULT_JS_FILE_NAME)
             if self.copy_css:
                 files_to_copy.append(DEFAULT_CSS_FILE_NAME)
+            if self.template_name == "js":
+                files_to_copy.extend(JS_LOCAL_ASSET_FILE_NAMES)
         return files_to_copy
 
     @property

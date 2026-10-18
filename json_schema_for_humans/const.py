@@ -52,6 +52,20 @@ DEFAULT_TEMPLATE_FILE_NAME = "base.html"
 
 DEFAULT_CSS_FILE_NAME = "schema_doc.css"
 DEFAULT_JS_FILE_NAME = "schema_doc.min.js"
+# Served beside the "js" template's pages, so they load nothing from a CDN. The same files, byte for byte, as the
+# CDN URLs the template used (their SRI hashes match): jQuery 3.7.1, Bootstrap 5.3.3, and the Overpass font from
+# js_offline. Font Awesome is dropped: no template uses it.
+JS_LOCAL_ASSET_FILE_NAMES = [
+    "vendor/js/jquery-3.7.1.min.js",
+    "vendor/js/bootstrap-5.3.3.bundle.min.js",
+    "vendor/css/bootstrap-5.3.3.min.css",
+    "vendor/css/overpass.css",
+    "vendor/font/qFdH35WCmI96Ajtm81GhU9vyww.woff2",
+    "vendor/font/qFdH35WCmI96Ajtm81GlU9s.woff2",
+    "vendor/font/qFdH35WCmI96Ajtm81GoU9vyww.woff2",
+    "vendor/font/qFdH35WCmI96Ajtm81GqU9vyww.woff2",
+    "vendor/font/qFdH35WCmI96Ajtm81GrU9vyww.woff2",
+]
 OFFLINE_CSS_FILE_NAMES = [
     "css/bootstrap-4.3.1.min.css",
     "css/facf9fa52c.css",
